@@ -57,5 +57,98 @@ namespace Oops.InventoryDataManagement
             var json = JsonConvert.SerializeObject(inventories);
             File.WriteAllText(filePath, json);
         }
+
+        //EDIT DATA 
+        public void EditInventoryData()
+        {
+            Console.WriteLine("Select the Option  to edit\nInventories are Rice,Wheat and Pulses");
+            string editinventory = Console.ReadLine();
+            if (editinventory.Equals("Rice"))
+            {
+                Console.WriteLine("Enter Which Rice type you want to edit");
+                string rice = Console.ReadLine();
+                foreach (var data in RiceList)
+                {
+                    if (data.Name.Equals(rice))
+                    {
+                        Console.WriteLine("select what you want to edit\n1.Name 2.Weight 3.Price");
+                        int choice = Convert.ToInt32(Console.ReadLine());
+                        switch (choice)
+                        {
+                            case 1:
+                                Console.WriteLine("Enter the new Name");
+                                data.Name = Console.ReadLine();
+                                break;
+                            case 2:
+                                Console.WriteLine("Enter the new Weight");
+                                data.Weight = Convert.ToInt32(Console.ReadLine());
+                                break;
+                            case 3:
+                                Console.WriteLine("Enter the new Price per kg");
+                                data.Price = Convert.ToInt64(Console.ReadLine());
+                                break;
+                        }
+                    }
+                }
+            }
+            else if (editinventory.Equals("Wheat"))
+            {
+                Console.WriteLine("Enter Which Wheat type you want to edit");
+                string wheat = Console.ReadLine();
+                foreach (var data in WheatList)
+                {
+                    if (data.Name.Equals(wheat))
+                    {
+                        Console.WriteLine("select what you want to edit\n1.Name 2.Weight 3.Price");
+                        int choice = Convert.ToInt32(Console.ReadLine());
+                        switch (choice)
+                        {
+                            case 1:
+                                Console.WriteLine("Enter the new Name");
+                                data.Name = Console.ReadLine();
+                                break;
+                            case 2:
+                                Console.WriteLine("Enter the new Weight");
+                                data.Weight = Convert.ToInt32(Console.ReadLine());
+                                break;
+                            case 3:
+                                Console.WriteLine("Enter the new Price per kg");
+                                data.Price = Convert.ToInt64(Console.ReadLine());
+                                break;
+                        }
+                    }
+                }
+            }
+            else if (editinventory.Equals("Pulses"))
+            {
+                Console.WriteLine("Enter which Pulses type you want to edit");
+                string pulses = Console.ReadLine();
+                foreach (var data in PulsesList)
+                {
+                    if (data.Name.Equals(pulses))
+                    {
+                        Console.WriteLine("select what you want to edit\n1.Name 2.Weight 3.Price");
+                        int choice = Convert.ToInt32(Console.ReadLine());
+                        switch (choice)
+                        {
+                            case 1:
+                                Console.WriteLine("Enter the new Name");
+                                data.Name = Console.ReadLine();
+                                break;
+                            case 2:
+                                Console.WriteLine("Enter the new Weight");
+                                data.Weight = Convert.ToInt32(Console.ReadLine());
+                                break;
+                            case 3:
+                                Console.WriteLine("Enter the new Price ");
+                                data.Price = Convert.ToInt64(Console.ReadLine());
+                                break;
+                        }
+                    }
+                }
+            }
+            else
+                Console.WriteLine("Invalid Data");
+        }
     }
 }
