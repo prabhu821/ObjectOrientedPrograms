@@ -22,14 +22,14 @@ namespace Oops.InventoryDataManagement
         {
             var json = File.ReadAllText(file);
             InventoryData inventories = JsonConvert.DeserializeObject<InventoryData>(json);
+            
             RiceList = inventories.Rice;
-
             Display(RiceList);
+           
             WheatList = inventories.Wheat;
-
             Display(WheatList);
+            
             PulsesList = inventories.Pulses;
-
             Display(PulsesList);
         }
         public void Display(List<Inventory> inventories)
@@ -37,6 +37,19 @@ namespace Oops.InventoryDataManagement
             foreach (var data in inventories)
             {
                 Console.WriteLine(data.Name + " \n " + data.Weight + " \n " + data.Price);
+            }
+        }
+
+        public void AddInventoryDetails(string inventoryName)
+        {
+            Inventory inventory = new Inventory();
+            string addinventory = Console.ReadLine();
+            if (inventoryName.Equals("Rice"))
+            {
+                inventory.Name = "D";
+                inventory.Weight = 50;
+                inventory.Price = 10.0;
+                RiceList.Add(inventory);
             }
         }
         public void WriteToJson(string filePath)

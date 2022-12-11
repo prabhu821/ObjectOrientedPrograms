@@ -14,7 +14,7 @@ namespace OOPSPrograms
             while (flag)
             {
                 Console.WriteLine("Inventory Data Management");
-                Console.WriteLine("Select the option \n1.InventoryManagement \n2.InventoryDataManagement \n3.Exit");
+                Console.WriteLine("Select the option \n1.InventoryManagement \n2.InventoryDataManagement \n3.Add Inventory \n4.Exit");
                 {
                     int choice = Convert.ToInt32(Console.ReadLine());
                     switch (choice)
@@ -26,6 +26,12 @@ namespace OOPSPrograms
                         case 2:
                             InventoryManagement inventoryManagement = new InventoryManagement();
                             inventoryManagement.ReadJSONFile(JsonDataFilePath);
+                            break;
+                        case 3:
+                            InventoryManagement inventoryManagement1 = new InventoryManagement();
+                            inventoryManagement1.ReadJSONFile(JsonDataFilePath);
+                            inventoryManagement1.AddInventoryDetails("Rice");
+                            inventoryManagement1.WriteToJson(JsonDataFilePath);
                             break;
                         default:
                             flag = false;
