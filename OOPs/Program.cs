@@ -1,10 +1,14 @@
-﻿namespace OOPs
+﻿using Oops.InventoryManagement;
+using System;
+namespace OOPSPrograms
 {
-    internal class Program
+    class Program
     {
+        static string InventoryFilePath = @"D:\OneDrive\Documents\BridgeLabz\ObjectOrientedPrograms\OOPs\InventoryManagement\Inventory.json";
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            InventoryDetailsManagement inventoryDetailsManagement = new InventoryDetailsManagement();
+            inventoryDetailsManagement.ReadJSonFile(InventoryFilePath);
         }
     }
 }
