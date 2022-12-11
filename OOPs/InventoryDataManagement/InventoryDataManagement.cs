@@ -150,5 +150,57 @@ namespace Oops.InventoryDataManagement
             else
                 Console.WriteLine("Invalid Data");
         }
+
+
+        //DELETE DATA
+        public void DeleteInventoryData()
+        {
+            Console.WriteLine("Enter  data you want to delete");
+            string deleteinventory = Console.ReadLine();
+            if (deleteinventory.Equals("Rice"))
+            {
+                Console.WriteLine("Enter which data you want to delete");
+                string deleterice = Console.ReadLine();
+                Inventory deletedata = new Inventory();
+                foreach (var delete in RiceList)
+                {
+                    if (delete.Name.Equals(deleterice))
+                    {
+                        deletedata = delete;
+                    }
+                }
+                RiceList.Remove(deletedata);
+            }
+            else if (deleteinventory.Equals("Wheat"))
+            {
+                Console.WriteLine("Enter which data you want to delete");
+                string deletewheat = Console.ReadLine();
+                Inventory deletedata = new Inventory();
+                foreach (var delete in WheatList)
+                {
+                    if (delete.Name.Equals(deletewheat))
+                    {
+                        deletedata = delete;
+                    }
+                }
+                WheatList.Remove(deletedata);
+            }
+            else if (deleteinventory.Equals("Pulses"))
+            {
+                Console.WriteLine("Enter which data you want to delete");
+                string deletepulses = Console.ReadLine();
+                Inventory deletedata = new Inventory();
+                foreach (var delete in PulsesList)
+                {
+                    if (delete.Name.Equals(deletepulses))
+                    {
+                        deletedata = delete;
+                    }
+                }
+                PulsesList.Remove(deletedata);
+            }
+        }
+
+
     }
 }
